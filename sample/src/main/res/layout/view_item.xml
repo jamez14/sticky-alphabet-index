@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:clickable="true"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/small"
-    android:textSize="14sp"
-    tools:text="Aardvark"
-    android:background="@drawable/white_touch"
-    tools:context=".MainActivity"/>
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_marginBottom="6dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:paddingTop="0dp">
+
+    <LinearLayout
+        android:id="@+id/empty_placeholder"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/view_item_textview"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_touch"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/small"
+            android:textSize="14sp"
+            tools:context=".MainActivity"
+            tools:text="Aardvark" />
+    </LinearLayout>
+</LinearLayout>

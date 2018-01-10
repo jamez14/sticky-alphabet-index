@@ -122,14 +122,15 @@ public class MainActivity extends AppCompatActivity {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       View view = LayoutInflater.from(parent.getContext())
           .inflate(R.layout.view_item, parent, false);
+
       return new RecyclerView.ViewHolder(view) {
       };
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-      TextView textView = (TextView) holder.itemView;
-      textView.setText(getItem(position));
+        TextView textView = holder.itemView.findViewById(R.id.view_item_textview);
+        textView.setText(getItem(position));
     }
 
     @Override
