@@ -25,3 +25,16 @@ apply from: 'gradle-maven-push.gradle'
 afterEvaluate {
     androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
 }
+
+task deleteJar(type: Delete) {
+    delete 'libs/stickyheadersrecyclerview.jar'
+}
+
+task createJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('libs/jars/')
+    include('classes.jar')
+    rename('classes.jar', 'stickyheadersrecyclerview.jar')
+}
+
+createJar.dependsOn(deleteJar, build)

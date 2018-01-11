@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="18dp"
         android:paddingTop="18dp">
 
         <Button
@@ -36,7 +35,6 @@
         android:layout_below="@id/buttons_container"
         android:background="#ffbef0ff"
         android:clipToPadding="true"
-        android:padding="16dp"
         android:saveEnabled="false" />
 
 </RelativeLayout>

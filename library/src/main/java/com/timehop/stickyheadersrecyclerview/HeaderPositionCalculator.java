@@ -124,7 +124,7 @@ public class HeaderPositionCalculator {
       translationX = firstView.getLeft() - leftMargin + mTempRect1.left;
       translationY = Math.max(
           firstView.getTop() - topMargin - header.getHeight() - mTempRect1.bottom,
-          getListTop(recyclerView) + mTempRect1.top);
+          getListTop(recyclerView) + mTempRect1.top) + 150;
     } else {
       translationY = firstView.getTop() - topMargin + mTempRect1.top;
       translationX = Math.max(

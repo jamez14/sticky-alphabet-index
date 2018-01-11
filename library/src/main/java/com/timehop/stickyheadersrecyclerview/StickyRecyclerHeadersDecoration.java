@@ -88,7 +88,7 @@ public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration
   private void setItemOffsetsForHeader(Rect itemOffsets, View header, int orientation) {
     mDimensionCalculator.initMargins(mTempRect, header);
     if (orientation == LinearLayoutManager.VERTICAL) {
-      itemOffsets.top = header.getHeight() + mTempRect.top + mTempRect.bottom;
+      itemOffsets.top = 0;//header.getHeight() + mTempRect.top + mTempRect.bottom;
     } else {
       itemOffsets.left = header.getWidth() + mTempRect.left + mTempRect.right;
     }
