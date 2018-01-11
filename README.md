@@ -1,5 +1,4 @@
-This project is no longer being maintained
-==========================================
+**Forked so that I could make it more like the Android contacts app. It has a "sticky side index letter" as opposed to just a sticky header. In this version, the letter is just on the left side of the recycler view.**
 
 sticky-headers-recyclerview
 ===========================
