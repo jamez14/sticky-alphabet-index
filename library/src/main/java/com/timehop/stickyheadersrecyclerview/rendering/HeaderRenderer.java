@@ -51,7 +51,9 @@ public class HeaderRenderer {
       canvas.clipRect(mTempRect);
     }
 
-    canvas.translate(offset.left, offset.top);
+    // makes the header overlap the item .. `- 50` is the sweet spot for the first item
+    // but `+ 170` is better for the second (and subsequent items)
+    canvas.translate(offset.left, offset.top + 170);
 
     header.draw(canvas);
     canvas.restore();
