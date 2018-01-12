@@ -123,7 +123,7 @@ public class HeaderPositionCalculator {
         if (orientation == LinearLayoutManager.VERTICAL) {
             translationX = firstView.getLeft() - leftMargin + mTempRect1.left;
             int headerHeight = 0;
-            if ((Integer) header.getTag() == 1) {
+            if (header != null && header.getTag() != null && header.getTag().equals(1)) {
                 headerHeight = header.getHeight();
             }
 
