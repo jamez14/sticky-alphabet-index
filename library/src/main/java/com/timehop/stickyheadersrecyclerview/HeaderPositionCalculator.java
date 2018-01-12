@@ -122,9 +122,10 @@ public class HeaderPositionCalculator {
 
     if (orientation == LinearLayoutManager.VERTICAL) {
       translationX = firstView.getLeft() - leftMargin + mTempRect1.left;
+      // translationY determines how much of the sticky header is hidden when you scroll
       translationY = Math.max(
           firstView.getTop() - topMargin - header.getHeight() - mTempRect1.bottom,
-          getListTop(recyclerView) + mTempRect1.top) + 150;
+          getListTop(recyclerView) + mTempRect1.top);
     } else {
       translationY = firstView.getTop() - topMargin + mTempRect1.top;
       translationX = Math.max(
@@ -150,7 +151,8 @@ public class HeaderPositionCalculator {
       mDimensionCalculator.initMargins(mTempRect2, stickyHeader);
 
       if (mOrientationProvider.getOrientation(recyclerView) == LinearLayoutManager.VERTICAL) {
-        int topOfNextHeader = viewAfterHeader.getTop() - mTempRect1.bottom - nextHeader.getHeight() - mTempRect1.top;
+        // topOfNextHeader .. adding 50 make it overlay the last item correctly, but it just disappears which looks bad
+        int topOfNextHeader = viewAfterHeader.getTop() - mTempRect1.bottom - nextHeader.getHeight() - mTempRect1.top + 50;
         int bottomOfThisHeader = recyclerView.getPaddingTop() + stickyHeader.getBottom() + mTempRect2.top + mTempRect2.bottom;
         if (topOfNextHeader < bottomOfThisHeader) {
           return true;
@@ -174,6 +176,9 @@ public class HeaderPositionCalculator {
     if (orientation == LinearLayoutManager.VERTICAL) {
       int topOfStickyHeader = getListTop(recyclerView) + mTempRect2.top + mTempRect2.bottom;
       int shiftFromNextHeader = viewAfterNextHeader.getTop() - nextHeader.getHeight() - mTempRect1.bottom - mTempRect1.top - currentHeader.getHeight() - topOfStickyHeader;
+      // shiftFromNextHeader determines when the previous header disappears when scrolling the next one over it
+      // + 80 makes it a seamless transition once you get to the next letter
+      shiftFromNextHeader = shiftFromNextHeader + 80;
       if (shiftFromNextHeader < topOfStickyHeader) {
         translation.top += shiftFromNextHeader;
       }
@@ -245,6 +250,7 @@ public class HeaderPositionCalculator {
 
   private int getListTop(RecyclerView view) {
     if (view.getLayoutManager().getClipToPadding()) {
+      // adding or subtracting from this effects positioning .. i had it at `+ 40` but not sure what it was doing
       return view.getPaddingTop();
     } else {
       return 0;

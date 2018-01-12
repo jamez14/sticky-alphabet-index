@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Set adapter populated with example dummy data
     final AnimalsHeadersAdapter adapter = new AnimalsHeadersAdapter();
-    adapter.add("Animals below!");
+
     adapter.addAll(getDummyDataSet());
     recyclerView.setAdapter(adapter);
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     recyclerView.addItemDecoration(headersDecor);
 
     // Add decoration for dividers between list items
-    recyclerView.addItemDecoration(new DividerDecoration(this));
+//    recyclerView.addItemDecoration(new DividerDecoration(this));
 
     // Add touch listeners
     StickyRecyclerHeadersTouchListener touchListener =
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
       @Override
       public void onItemClick(View view, int position) {
-        adapter.remove(adapter.getItem(position));
+        //adapter.remove(adapter.getItem(position));
       }
     }));
     adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
