@@ -154,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int position) {
       TextView textView = (TextView) holder.itemView;
       textView.setText(String.valueOf(getItem(position).charAt(0)));
-      holder.itemView.setBackgroundColor(getRandomColor());
       holder.itemView.setTag(position);
     }
 

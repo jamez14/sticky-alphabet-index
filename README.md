@@ -1,7 +1,36 @@
-**Forked so that I could make it more like the Android contacts app. It has a "sticky side index letter" as opposed to just a sticky header. In this version, the letter is just on the left side of the recycler view.**
-
-sticky-headers-recyclerview
+Sticky Alphabet Index for Android
 ===========================
+
+This fork is based on the code from [timehop](https://github.com/timehop/sticky-headers-recyclerview). Although, instead of sticky headers, this implementation is a replica of the native Android contacts app, which has the letters of each alphabetical section on the left hand side as you scroll.
+
+Example of the forked code running:
+
+![example gif of android sticky side index](https://i.imgur.com/f57pMbN.gif "Sticky Side Index in action")
+
+## Installation
+
+Currently this is not hosted anywhere, except right here. If there is any interest, I'd be happy to get it hosted somewhere to be able to be installed much easier.
+
+For now, the process I am using is...
+
+1. Open the project in Android studio
+1. Create the `jar` (see screenshots below for more info):
+    * Option 1: Select the `createJar` option from the run options
+    ![Create jar from run menu](https://i.imgur.com/LLtXuge.png "Create jar from run menu")
+    * Option 2: Open up the `Gradle project` panel, navigate to `:library` -> `Tasks` -> `other` -> `createJar` and double click that)
+    ![create jar from gradle project sidebar panel](https://i.imgur.com/rpEFmb9.gif "create jar from gradle project sidebar panel")
+1. Import/add the jar into your own Android Studio project. See [this Stack Overflow question](https://stackoverflow.com/a/35241990/1554860) on how to do this.
+
+
+
+
+
+---
+
+***Original README below***
+
+## sticky-headers-recyclerview
+
 
 This decorator allows you to easily create section headers for RecyclerViews using a
 LinearLayoutManager in either vertical or horizontal orientation.
@@ -11,16 +40,11 @@ a library that many of us relied on for sticky headers in our listviews.
 
 Here is a quick video of it in action (click to see the full video):
 
-[![animated gif demo](http://i.imgur.com/I0ztoPw.gif)](https://www.youtube.com/watch?v=zluBwbf3aew)
+(**Took these out because this is not how it looks anymore**)
 
-[![animated gif demo](http://i.imgur.com/b5pJjtL.gif)](https://www.youtube.com/watch?v=zluBwbf3aew)
+* [old demo](http://i.imgur.com/I0ztoPw.gif)
+* [old demo 2](http://i.imgur.com/b5pJjtL.gif)
 
-Download
---------
-
-Current version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.timehop.stickyheadersrecyclerview/library/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.timehop.stickyheadersrecyclerview/library)
-
-    compile 'com.timehop.stickyheadersrecyclerview:library:[latest.version.number]@aar'
 
 
 Usage
